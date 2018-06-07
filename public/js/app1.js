@@ -1,24 +1,19 @@
 $( document ).ready(function() {
-  console.log("Ddddd")
   $("#twitter-form").on("submit", function(event){
     //stop the form from submitting or refreshing the page and set the variables
       event.preventDefault();
       const url = $(this).attr("action")
       formdata = $(this).serialize();
-      console.log("xxxx")
     //get the data typed i.e the tweet
       const tweet = $("#tweet-textarea").val()
-      console.log(tweet)
       const newList = makeTheListForTheTweet(tweet)
     //send or post it to the server so it can tweet it
       $.post(url, formdata, function(response){
-        console.log("its been posted")
         //update the dorm with the tweet after success
         $(".app--tweet--list").prepend(newList);
         //the clear the input or textarea
         $("#tweet-textarea").val("")
       })
-      console.log("its ddddbeen posted")
   })
 }); // document
 

@@ -7,7 +7,7 @@ const T = new Twit(config)
 
 //dummy Data
 const Friends = require("../friends").users;
-const DMs = require("../DMs").events;
+const DMs = []//require("../DMs").events;
 const Tweets = require("../tweets");
 const User = Tweets[0].user
 
@@ -48,7 +48,7 @@ Router.get("/", (req,res, next)=>{
   console.log("connected");
   ChangeTheTimeFormatOfDMs(DMs);
   ChangeTheDateFormatOfTweets(Tweets);
-  res.render("xxx", {Tweets,DMs,Friends,User})
+  res.render("layout", {Tweets,DMs,Friends,User})
 });
 
 Router.post("/updateStatues", (req,res)=>{

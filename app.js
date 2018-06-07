@@ -6,7 +6,6 @@ const moment = require('moment');
 //const Twit = require("twit");
 //const T = new Twit(config)
 
-///make a git ignore file
 app.set("view engine", "pug");
 app.use(express.static("public")) //app.use("/static", express.static("public"))
 app.use(bodyParser.urlencoded({extended: false}))
